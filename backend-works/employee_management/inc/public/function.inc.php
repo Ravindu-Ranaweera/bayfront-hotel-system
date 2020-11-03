@@ -41,7 +41,25 @@ function display_error($errors) {
     echo '<b>There was error(s) on your form</b><br>';
     $len = sizeof($errors);
     
-    foreach(array_slice($errors, 0, $len-3) as $error) {
+    foreach(array_slice($errors, 0, $len-7) as $error) {
+            // $error = str_replace("_", " ", $error); //remove the underline
+            // Following function won't be help now
+            $error = ucfirst(str_replace("_", " ", $error)); //First letter capital and remove the underline
+            echo $error . '<br>';
+        }
+    echo '</div>';
+    
+
+}
+
+function display_error1($errors,$value) {
+    // Format and displays form errors
+
+    echo '<div class="errmsg">';
+    echo '<h4>There was error(s) on your form</h4>';
+    $len = sizeof($errors);
+    
+    foreach(array_slice($errors, 0, $len-$value) as $error) {
             // $error = str_replace("_", " ", $error); //remove the underline
             // Following function won't be help now
             $error = ucfirst(str_replace("_", " ", $error)); //First letter capital and remove the underline

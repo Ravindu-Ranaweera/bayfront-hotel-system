@@ -2,25 +2,20 @@
 <div class="sidebar">
 
     <div class="logo">
-            <img src="img/wolflogoBasic.png" alt="#">
-            <p>WolfCode Team</p>       
+            <img src="assets/img/logo.png" alt="#">
+            <p>Bayfront Hotel</p>       
     </div>
+
     <hr>
 
     <div class="container">
         <ul class="nav1">
             <li class="nav1-item">
-                <a href="#" class="nav1-link">
+                <a href="index.php" class="nav1-link">
                     <p class="nav-p"><i class="material-icons">dashboard</i>Dashboard</p>   
                 </a>
             </li>
 
-            <li class="nav1-item">
-                <a href="#" class="nav1-link">
-                    <p class="nav-p"><i class="material-icons">person</i>User Profile</p>         
-                </a>
-            </li>  
-            
             <li class="nav1-item">
                 <a href="employee.php" class="nav1-link">
                     <p class="nav-p"><i class="material-icons">people</i>Employee</p>         
@@ -28,34 +23,48 @@
             </li> 
 
             <li class="nav1-item">
-                <a href="#" class="nav1-link">
-                    <p class="nav-p"><i class="material-icons">today</i>Today Reservation</p>         
+                <a href="room.php" class="nav1-link">
+                    <p class="nav-p"><i class="material-icons">room_preferences</i>Rooms</p>         
                 </a>
-            </li> 
+            </li>
+
+            <li class="nav1-item">
+                <a href="reservation.php" class="nav1-link">
+                    <p class="nav-p"><i class="material-icons">book</i>Reservation</p>         
+                </a>
+            </li>  
 
             <li class="nav1-item">
                 <a href="#" class="nav1-link">
                     <p class="nav-p"><i class="material-icons">edit</i>Edit Website</p>         
                 </a>
             </li> 
-
+            
             <li class="nav1-item">
                 <a href="#" class="nav1-link">
-                    <p class="nav-p"><i class="material-icons">library_books</i>Reports</p>         
-                </a>
-            </li>
-
-            <li class="nav1-item">
-                <a href="#" class="nav1-link">
-                    <p class="nav-p"><i class="material-icons">notifications</i>Notifications</p>         
+                    <p class="nav-p"><i class="material-icons">today</i>None</p>         
                 </a>
             </li> 
 
             <li class="nav1-item">
                 <a href="#" class="nav1-link">
-                    <p class="nav-p"><i class="material-icons">analytics</i>Analysis</p>         
+                    <p class="nav-p"><i class="material-icons">library_books</i>None</p>         
                 </a>
             </li>
+
+            <li class="nav1-item">
+                <a href="#" class="nav1-link">
+                    <p class="nav-p"><i class="material-icons">notifications</i>None</p>         
+                </a>
+            </li> 
+
+            <li class="nav1-item">
+                <a href="#" class="nav1-link">
+                    <p class="nav-p"><i class="material-icons">analytics</i>None</p>         
+                </a>
+            </li>
+
         </ul>
-    </div>
+
+    </div> <!--End Container -->
 </div>

@@ -1,45 +1,51 @@
 <?php 
 
-require ('connection.php');
-require ('function.inc.php');
+session_start();
+require ('public/connection.php');
+require ('public/function.inc.php');
+
+
+//Checking if a user is logged in
+if(!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php"); 
+}
 
 $errors = array();
 
+$owner_user_id = '';
 $first_name = '';
 $last_name = '';
 $email = '';
-$password = '';
+$salary = '';
+$location = '';
+$contact_num = '';
 
 if(isset($_POST['submit'])) {
+    $owner_user_id = $_POST['owner_user_id'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $salary = $_POST['salary'];
+    $location = $_POST['location'];
+    $contact_num = $_POST['contact_num'];
     
-    // Form Validation
+    // Form Validation and Checking empty input fields
     
-
-    // //Same way in Simple manner
-    $req_fields = array('first_name', 'last_name', 'email', 'password');
+    $req_fields = array('first_name', 'last_name', 'email', 'salary', 'location', 'contact_num');
 
     $errors = array_merge($errors, check_req_fields($req_fields));
     
 
+    // Checking max length
 
-    //End Checking empty input fields
-    
-
-    // Same way in Simple manner
-    $max_len_fields = array('first_name' => 50, 'last_name' => 100, 'email' => 100, 'password' => 40);
+    $max_len_fields = array('first_name' => 50, 'last_name' => 100, 'email' => 100, 'salary' => 10, 'location' => 50, 'contact_num' => 10);
 
     $errors = array_merge($errors, check_max_len($max_len_fields));
 
-    // End of Checking max length
 
 
 
     // Checking email address
-
 
     if(!is_email($_POST['email'])) {
         $errors[] = 'Email address is Invalid';
@@ -49,7 +55,7 @@ if(isset($_POST['submit'])) {
     
     // String sanitizer for SQL injection
     $email = mysqli_real_escape_string($connection, $_POST['email']);
-    $query = "SELECT * FROM users WHERE email = '{$email}' LIMIT 1";
+    $query = "SELECT * FROM employee WHERE email = '{$email}' LIMIT 1";
 
     $result_set= mysqli_query($connection, $query);
 
@@ -59,39 +65,54 @@ if(isset($_POST['submit'])) {
         }
     }
 
+
+     //Owner_user_checking
+     $owner_user_id = mysqli_real_escape_string($connection, $_POST['owner_user_id']);
+     $query = "SELECT * FROM owner WHERE owner_user_id= '{$owner_user_id}'  LIMIT 1";
+     
+     $result_set= mysqli_query($connection, $query);
+ 
+     if($result_set) { //Check Query Successful
+         if(mysqli_num_rows($result_set) == 0) {
+             $errors[] = 'Owner ID isn\'t valid';
+         }
+     }
+
+
     if(!empty($errors)) {
         //pass the arrray through php file to another php file using .http_build_query($errors)
-        header("Location: ../add-new.php?" . http_build_query($errors) . "&first_name=" . $first_name. "&last_name=" . $last_name. "&email=" . $email); 
+        header("Location: ../add-new.php?" . http_build_query($errors) . "&first_name=" . $first_name. "&last_name=" . $last_name. "&email=" . $email. "&salary=" . $salary. "&location=" . $location. "&contact_num=" . $contact_num); 
         exit();
     }
     // End of Form Validation
 
     else {
         // No errors found.. Adding new record
-        // connection.php already require for this file
         $first_name = mysqli_real_escape_string($connection, $_POST['first_name']); 
         $last_name = mysqli_real_escape_string($connection, $_POST['last_name']);
-        $password = mysqli_real_escape_string($connection, $_POST['password']);
+        $salary = mysqli_real_escape_string($connection, $_POST['salary']);
+        $location = mysqli_real_escape_string($connection, $_POST['location']);
+        $contact_num = mysqli_real_escape_string($connection, $_POST['contact_num']);
         // Email address is already sanitized
 
-        $hashed_password = sha1($password);
+        
 
-        $query = "INSERT INTO users (";
-        $query .= "first_name, last_name, email, password, is_deleted";
+        $query = "INSERT INTO employee (";
+        $query .= "owner_user_id,first_name, last_name, email, salary, location, contact_num, is_deleted";
         $query .= ") VALUES (";
-        $query .= "'{$first_name}', '{$last_name}', '{$email}', '{$hashed_password}', 0";
+        $query .= "'{$owner_user_id}', '{$first_name}', '{$last_name}', '{$email}', '{$salary}', '{$location}', '{$contact_num}', 0";
         $query .= ")";
 
         $result = mysqli_query($connection, $query);
 
         if($result) {
             // query successful.. redirecting to users page
-            header("Location: ../employee.php?user_added=true"); 
+            header("Location: ../employee.php?employee_added=true"); 
             exit();
         }
         else {
             $errors[] = 'Failed to add the new record';
-            header("Location: ../add-new.php?" . http_build_query($errors)); 
+            header("Location: ../employee.php?" . http_build_query($errors)); 
             exit();
         }
 

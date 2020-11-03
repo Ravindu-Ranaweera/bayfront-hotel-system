@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inex Page</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-</head>
 
-<body>
+<?php
+    session_start();
+    $title = "Index Page";
+    require('public/header.php'); 
+    
+?>
 
 
 
@@ -17,10 +13,16 @@
 
         <!-- Sidebar Design -->
         <?php 
-            require('sidebar.php');
+            
+            require('public/sidebar.php');
         ?>
 
-        <!-- Navbar hast to design -->
+        <!-- Navbar -->
+        <?php 
+            $navbar_title = "Index Page";
+            $search = 0;
+            require('public/navbar.php');
+        ?>
         
         <!-- Table design -->
         <div class="content">
@@ -38,7 +40,14 @@
                         <p class="textfortabel">See What is Complete</p>
                     </div>
                     <div class="cardbody">
-                         <h3>Employee Icon Complete Go and See</h3>
+                         <h4>1.Employee Page #Done</h4>
+                         <h4>2.Add New Employee Page #Done</h4>
+                         <h4>3.Modify Employee Page #Done</h4>
+                         <h4>4.Room Page #Done</h4>
+                         <h4>5.Room View Page #Done</h4>
+                         <h4>6.Room Refresh #Done</h4>
+                         <h4>7.Basic Reservation Page #Done But Payment Details Validation NOT DONE</h4>
+
                     </div>
                 </div>
 
@@ -47,8 +56,7 @@
         </div>
     </div>
     
-</body>
-</html>
+<?php require('public/footer.php'); ?>
 
 
 

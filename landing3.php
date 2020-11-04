@@ -5,231 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/header-style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/footer-style.css">
 	<link rel="stylesheet" type="text/css" href="css/basic-style.css">
 	
 	
 	<title>Document</title>
 </head>
-<style>
-	.slidecontainer {
-  position: relative;
-  overflow: hidden;
-  margin:  0;
-  width: 100%;
-  height: 500px;
-}
-
-.image {
-	object-fit: cover;
-  position: absolute;
-  opacity: 1;
-  min-width: 100%;
-  height: 120%;
-  transition: opacity 1s ease-in-out;
-  z-index: -1;
-  -webkit-animation: zoom 40s; /* Chrome, Safari, Opera */
-  animation: zoom 50s alternate;
-  
-}
-
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes zoom {
-    from {
-    	-webkit-transform: scale(1,1);
-    }
-    to {
-    	-webkit-transform: scale(1.2,1.2);
-    }
-}
-
-/* Standard syntax */
-@keyframes zoom {
-   from {
-        transform: scale(1,1);
-   }
-   to {
-        transform: scale(1.2,1.2);
-   }
-}
-
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-  font-size: 32px;
-}
-.bottom-left h1{
-	color: #fff;
-	text-shadow: 2px 2px #000;
-	letter-spacing: 1px;
-	font-weight: 600;
-	text-transform: capitalize;
-}
-
-.package {
-	margin-top: 40px;	
-	height: 400px;
-	overflow: hidden;
-	display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-}
-.packImg{
-	flex: 1;
-}
-.package img{
-	width: 400px;
-	object-fit: cover;
-}
-.price{
-	flex: 1;
-	margin-left: 30px;
-}
-.inline {
-	margin-bottom: 20px;
-	margin-left: 30px;
-	font-size: 14px;
-	font-weight: bold;
-	color: #7d7d7d;
-
-}
-
-
-ul.inline li:after{
-	display: block;
-	content: " ";
-	clear: left;
-	 border-bottom: 2px dashed #ccc;
-	 margin-bottom: 30px;
-	 font-weight: 500;
-	 font-size: 15px;
-}
-
-
-	.headImg {
-		margin: 50px ;
-		width: 1400px;	
-		font-size: 16px;
-		display: flex;
-
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
-	.headImg .first {
-		
-		flex: 3;
-		letter-spacing: 1px;
-		font-weight: 500;
-
-	}
-	.headImg .first h3{
-		margin: 20px 0;
-	}
-
-	.headImg .second  {
-		flex: 1;
-		margin-left: 50px;
-		
-	}
-	.headImg .second img{
-		width: 300px;
-		object-fit: cover;
-	}
-
-
-
-.testimonial-quote blockquote {
-  /* Negate theme styles */
-  border: 0;
-  margin: 0;
-  padding: 0;
-  background: none;
-  color: gray;
-  font-family: Georgia, serif;
-  font-size: 1.5em;
-  font-style: italic;
-  line-height: 1.4 !important;
-  margin: 0 25px 0;
-  position: relative;
-  text-shadow: 0 1px #fff;
-  z-index: 1;
-}
-
-
-
-.testimonial-quote blockquote p {
-  color: #75808a;
-  line-height: 1.4 !important;
-}
-
-.testimonial-quote blockquote p:first-child:before { /* quotemarks */
-  content: '\201C';
-  color: #ff7720;
-  font-size: 7.5em;
-  font-weight: 700;
-  opacity: .3;
-  position: absolute;
-  top: -.4em;
-  left: -.2em;
-  text-shadow: none;
-  z-index: -300;
-}
-
-.testimonial-quote img {
-  border: 4px solid #ff7720;
-  border-radius: 50%;
-  display: block;
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  position: absolute;
-  top: -.3em;
-  left: 0;
-}
-
-.testimonial-quote cite {
-  color: gray;
-  margin-top: 10px;
-  margin-left: -150px;
-  display: block;
-  font-size: .8em;
-}
-
-.testimonial-quote cite span {
-  color: #ff7720;
-  font-size: 1em;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  text-shadow: 0 1px white;
-}
-
-.testimonial-quote {
-  position: relative;
-  margin: 50px 0;
-}
-
-.testimonial-quote .quote-container {
-  padding-left: 160px;
-}
-
-ul{
-  list-style:none;
-  list-style-type: square;
-
-}
-
-
-
-</style>
 <body>
 
-	<?php include("common/active.php"); ?>
+	<?php include("common/header_navbar.php"); ?>
 
 	<?php 
 		if(isset($_GET['article'])) {
@@ -266,7 +51,7 @@ ul{
 			</div>
 			
 				  
-				    <div class="testimonial-quote group">
+				    <div class="reviewQuote group">
 				        <img src="img/prof1.jpg">
 				        <div class="quote-container">
 				            <blockquote>
@@ -341,7 +126,7 @@ ul{
 			</div>
 			
 				  
-				    <div class="testimonial-quote group">
+				    <div class="reviewQuote group">
 				        <img src="img/prof2.jpg">
 				        <div class="quote-container">
 				            <blockquote>
@@ -435,7 +220,7 @@ ul{
 			<div id="kudo-wrap"> 
 				  <div class="adj-layer">
 				    <!-- <h1>Kudos</h1> -->
-				    <div class="testimonial-quote group">
+				    <div class="reviewQuote group">
 				        <img src="img/prof3.jpg">
 				        <div class="quote-container">
 				            <blockquote>
@@ -506,6 +291,12 @@ ul{
 	?>
 	<?php include("common/footer.php"); ?>
 
-	
+	<script type="text/javascript">
+	window.onload = function () {
+		const navbar= document.querySelector(".nav");
+		// console.log(navbar);
+		navbar.classList.toggle("sticky");
+	};
+	</script>
 </body>
 </html>

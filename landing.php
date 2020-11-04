@@ -9,93 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="css/basic-style.css">
 	<title>Document</title>
 </head>
-<style>
-	.slidecontainer {
-  position: relative;
-  overflow: hidden;
-  margin:  0;
-  width: 100%;
-  height: 500px;
-}
-
-.image {
-	object-fit: cover;
-  position: absolute;
-  opacity: 1;
-  min-width: 100%;
-  height: 120%;
-  transition: opacity 1s ease-in-out;
-  z-index: -1;
-  -webkit-animation: zoom 40s; /* Chrome, Safari, Opera */
-  animation: zoom 50s alternate;
-  
-}
-
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes zoom {
-    from {
-    	-webkit-transform: scale(1,1);
-    }
-    to {
-    	-webkit-transform: scale(1.2,1.2);
-    }
-}
-
-/* Standard syntax */
-@keyframes zoom {
-   from {
-        transform: scale(1,1);
-   }
-   to {
-        transform: scale(1.5,1.5);
-   }
-}
-
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-  font-size: 32px;
-}
-.bottom-left h1{
-	color: #fff;
-	text-shadow: 2px 2px #000;
-	letter-spacing: 1px;
-	font-weight: 600px;
-	text-transform: capitalize;
-}
-
-	.headImg {
-		margin: 50px ;
-		width: 1400px;	
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
-	.headImg .first {
-		
-		flex: 2;
-		margin-left: 50px;
-		letter-spacing: 1px;
-		font-weight: 500;
-
-	}
-
-	.headImg .second  {
-		flex: 1;
-		margin-left: 50px;
-		
-	}
-	.headImg .second img{
-		width: 500px;
-		object-fit: cover;
-	}
-</style>
 <body>
 
-	<?php include("common/active.php"); ?>
+	<?php include("common/header_navbar.php"); ?>
 
 	<?php 
 		if(isset($_GET['article'])) {
@@ -366,7 +282,16 @@
 			echo "not set";
 		}
 	?>
+
 	 <?php include("common/room-slider.php"); ?>
 	<?php include("common/footer.php"); ?>
+
+	<script type="text/javascript">
+	window.onload = function () {
+		const navbar= document.querySelector(".nav");
+		// console.log(navbar);
+		navbar.classList.toggle("sticky");
+	};
+	</script>
 </body>
 </html>

@@ -38,7 +38,7 @@
 <?php include("common/booking-form.php"); ?>
 <script type="text/javascript">
 	window.addEventListener("scroll",function () {
-		const navbar= document.querySelector(".navbar");
+		const navbar= document.querySelector(".nav");
 		console.log(navbar);
 		navbar.classList.toggle("sticky", window.scrollY>0);
 	})

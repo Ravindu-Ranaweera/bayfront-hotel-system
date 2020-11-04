@@ -4,11 +4,17 @@
 	<meta charset="UTF-8">
 	
 	<link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+	<link rel="icon" type="image/png" href="img/favicon.png"/>
+<!-- <link rel="icon" type="image/png" href="https://example.com/favicon.png"/> -->
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/header-style.css">
+	<link rel="stylesheet" type="text/css" href="css/footer-style.css">
+	<link rel="stylesheet" type="text/css" href="css/basic-style.css">
 	<title>Document</title>
 </head>
 <body>
 	<div class="containerheader">
-		<?php include("common/header_navbar.php"); ?>
+		<?php include("header_navbar.php"); ?>
 
 		<div class="slideshowContainer">
   
@@ -33,12 +39,13 @@
   			</div>
   
 		</div>
+		<?php include("common/booking-form.php"); ?>
 	</div>
 
-	<?php include("common/booking-form.php"); ?>
+	
 <script type="text/javascript">
 	window.addEventListener("scroll",function () {
-		const navbar= document.querySelector(".navbar");
+		const navbar= document.querySelector(".nav");
 		console.log(navbar);
 		navbar.classList.toggle("sticky", window.scrollY>0);
 	})

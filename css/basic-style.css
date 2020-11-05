@@ -112,7 +112,69 @@
 
 }
 
-/** end hover 5*/
+/*input field in forms===========================================================================================================*/
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #fff;
+  margin: 10px 0;
+  height: 55px;
+  border: 2px solid #000; 
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #acacac;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field input {
+  background: transparent;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #333;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-background-color:transparent;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+.social-text {
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
 
 .container {
   width: 100%;

@@ -5,7 +5,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/basic-style.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
@@ -15,8 +18,8 @@
   </head>
   <body>
 
-    <div class="container">
-      <div class="forms-container">
+    <div class="signinContainer">
+      <div class="signinFormContainer">
         <div class="signin-signup">
           <!-- signin -->
           <form action="login.php" method="post" class="sign-in-form">
@@ -38,7 +41,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" name="password"  placeholder="Password" />
             </div>
-            <input type="submit" value="Login" name="signin-btn" class="btn solid" />
+            <input type="submit" value="Login" name="signin-btn" class="btnn solid" />
              <a  class="social-text" href="frogot.php">Frogot Your Password?  </a>  
           
           <!-- signup -->
@@ -49,19 +52,19 @@
 
       <div class="panels-container">
         <div class="panel left-panel">
-          <div class="content">
+          <div class="signupContent">
             <h3>New here ?</h3>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
               ex ratione. Aliquid!
             </p>
-            <a href="signup.php"><button class="btn transparent" id="sign-up-btn">
+            <a href="signup.php"><button class="btnn transparent" id="sign-up-btn">
             
               Sign up
             </button></a>
          
           </div>
-          <img src="img/log.svg" class="image" alt="" />
+          <img src="img/log.svg" class="im" alt="" />
         </div>
     </div>
     </div>

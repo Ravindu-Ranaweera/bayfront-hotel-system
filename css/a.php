@@ -6,8 +6,8 @@
 	<title>Document</title>
 </head>
 <body>
-	<form action="">
-		<input type="text">
-	</form>
+
+	
+	
 </body>
 </html>
